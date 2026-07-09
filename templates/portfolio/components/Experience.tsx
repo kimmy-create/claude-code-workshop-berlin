@@ -1,6 +1,11 @@
-import { experience } from "../content";
+"use client";
+
+import { useLanguage } from "../lib/language-context";
 
 export function Experience() {
+  const { t } = useLanguage();
+  const { experience } = t;
+
   return (
     <section id="experience" className="py-16 border-t border-ink/10">
       <h2 className="text-3xl font-semibold mb-8">{experience.heading}</h2>

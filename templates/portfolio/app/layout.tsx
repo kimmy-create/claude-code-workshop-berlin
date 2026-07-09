@@ -1,10 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { meta } from "../content";
+import { content } from "../content";
+import { LanguageProvider } from "../lib/language-context";
 
 export const metadata: Metadata = {
-  title: meta.title,
-  description: meta.description,
+  title: content.de.meta.title,
+  description: content.de.meta.description,
 };
 
 export default function RootLayout({
@@ -13,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="de" className="scroll-smooth">
+      <body className="font-sans antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

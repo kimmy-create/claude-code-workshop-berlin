@@ -1,6 +1,11 @@
-import { about } from "../content";
+"use client";
+
+import { useLanguage } from "../lib/language-context";
 
 export function About() {
+  const { t } = useLanguage();
+  const { about } = t;
+
   return (
     <section id="about" className="py-16 border-t border-ink/10">
       <h2 className="text-3xl font-semibold mb-6">{about.heading}</h2>

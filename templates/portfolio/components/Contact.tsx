@@ -1,6 +1,11 @@
-import { contact } from "../content";
+"use client";
+
+import { useLanguage } from "../lib/language-context";
 
 export function Contact() {
+  const { t } = useLanguage();
+  const { contact } = t;
+
   return (
     <section id="contact" className="py-16 border-t border-ink/10">
       <h2 className="text-3xl font-semibold mb-4">{contact.heading}</h2>
